@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+		
+	<!-- 性能埋点树的数据-->
+	<appender name="perf" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="file" value="perf.log" />
+		<param name="append" value="true" />
+		<param name="encoding" value="GB2312" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d %-5p %c{2} %t - %m%n" />
+		</layout>
+	</appender>
+
+	<!-- ===================================================================== -->
+	<!-- Root logger的定义 -->
+	<!-- ===================================================================== -->
+	<root>
+		<level value="error" />
+		<appender-ref ref="perf" />
+	</root>
+	
+</log4j:configuration>
